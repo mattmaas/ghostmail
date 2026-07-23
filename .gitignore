@@ -1,0 +1,44 @@
+﻿# Local secrets
+.env
+.env.*
+!.env.example
+client_secrets.json
+credentials.json
+token.json
+*.token
+*.secret
+
+# Runtime state / local data
+data/
+*.db
+*.sqlite
+*.sqlite3
+*.log
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.venv/
+venv/
+build/
+dist/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Build artifacts
+*.egg-info/
+
+# Local working files / private helper scripts (never publish)
+_*.py
+# ...but Python package files are never private helpers; always keep them
+!__init__.py
+!__main__.py
+*.bak
+*.bak-*
+*.backup
