@@ -114,7 +114,9 @@ def test_record_blocks_marketing_senders(tmp_path):
 
 def test_record_allows_real_recruiter_at_guarded_domain(tmp_path):
     f = tmp_path / "actions.json"
-    real = _item("r1", company="Roberthalf", sender="Jane Doe <jane.doe@roberthalf.com>")
+    # role-based address at the guarded domain (no person-specific fixture)
+    real = _item("r1", company="Roberthalf",
+                 sender="RH Recruiting <recruiting@roberthalf.com>")
     assert at.record_action_items([real], actions_path=f) == 1
 
 

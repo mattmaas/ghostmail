@@ -92,8 +92,9 @@ def test_loyalty_and_product_marketing_are_not_interviews():
 
 
 def test_marketing_rules_do_not_hide_real_recruiter_mail():
-    # a HUMAN at roberthalf.com (not the no.reply marketing address) still gets through
-    j = C("Jane Doe <jane.doe@roberthalf.com>",
+    # a HUMAN at roberthalf.com (not the precise no.reply marketing address) still
+    # gets through (role-based address; no person-specific fixture at a real domain)
+    j = C("Robert Half Recruiting <recruiting@roberthalf.com>",
           "Are you available for a phone screen this week?")
     assert j.action == "interview"
     # agency humans at other guarded-adjacent domains are untouched
